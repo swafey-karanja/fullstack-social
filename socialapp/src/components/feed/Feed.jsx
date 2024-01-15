@@ -5,19 +5,20 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 
-export default function Feed() {
+export default function Feed( {username} ) {
   const [posts,setPosts] = useState([]);
   
         useEffect(() => {
           const fetchData = async () => {
-            const url = "posts/timeline/65a524b7f1341528a745b99f"; // Replace with your actual URL
-            console.log("Requesting URL:", url);
+            
         
             try {
-              const response = await axios.get(url);
-              console.log("Response:", response);
 
-              const res = await axios.get("posts/timeline/65a524b7f1341528a745b99f");
+              const res = username 
+              ? await axios.get("/posts/profile/" + username) 
+             : 
+             console.log("nothing");
+
               setPosts(res.data);
             } catch (error) {
               if (error.response) {
@@ -38,7 +39,7 @@ export default function Feed() {
           };
         
           fetchData();
-        }, []);
+        }, [username]);
         
 
   return (

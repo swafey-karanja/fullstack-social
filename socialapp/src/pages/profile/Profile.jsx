@@ -5,7 +5,7 @@ import Sidebar from '../../components/sidebar/Sidebar'
 import Rightbar from '../../components/rightbar/Rightbar'
 import Feed from '../../components/feed/Feed'
 
-export default function Profile( username ) {
+export default function Profile() {
 
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   return (
