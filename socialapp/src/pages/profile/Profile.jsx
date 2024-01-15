@@ -5,7 +5,7 @@ import Sidebar from '../../components/sidebar/Sidebar'
 import Rightbar from '../../components/rightbar/Rightbar'
 import Feed from '../../components/feed/Feed'
 
-export default function Profile() {
+export default function Profile( username ) {
 
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   return (
@@ -25,7 +25,7 @@ export default function Profile() {
                     </div>
                 </div>
                 <div className="profileRightBottom">
-                    <Feed/>
+                    <Feed username = "Gon"/>
                     <Rightbar Profile/>
                 </div>
             </div>

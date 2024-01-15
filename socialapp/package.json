@@ -19,6 +19,8 @@
     "react-router-dom": "^6.21.2",
     "react-scripts": "^5.0.1",
     "source-map-loader": "^4.0.2",
+    "timeago": "^1.6.7",
+    "timeago.js": "^4.0.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
