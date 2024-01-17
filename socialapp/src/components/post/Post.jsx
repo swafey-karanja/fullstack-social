@@ -7,7 +7,7 @@ import {format} from "timeago.js";
 
 
 export default function Post({ post }) {
-  const [like, setLike] = useState(post.likes.length);
+  const [likes, setLikes] = useState(post.likes.length);
   const [isLiked, setIsLiked] = useState(false);
   const [user, setUser] = useState({});
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
@@ -27,7 +27,7 @@ export default function Post({ post }) {
   },[post.userId]);
 
   const likeHandler =() => {
-    setLike(isLiked ? like-1 : like+1)
+    setLikes(isLiked ? likes-1 : likes+1)
     setIsLiked(!isLiked)
   }
 
@@ -65,7 +65,7 @@ export default function Post({ post }) {
             className="likeIcon"  
             onClick={likeHandler}
              />
-            <span className="likeCounter">{like} likes</span>
+            <span className="likeCounter">{likes} likes</span>
           </div>
           <div className="postBottomRight">
             <span className="postCommentText">{post.comment} comments</span>
