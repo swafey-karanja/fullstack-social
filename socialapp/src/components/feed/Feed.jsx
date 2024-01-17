@@ -10,32 +10,10 @@ export default function Feed( {username} ) {
   
         useEffect(() => {
           const fetchData = async () => {
-            
-        
-            try {
-
-              const res = username 
-              ? await axios.get("/posts/profile/" + username) 
-             : 
-             console.log("nothing");
-
-              setPosts(res.data);
-            } catch (error) {
-              if (error.response) {
-                // The request was made and the server responded with a status code
-                console.error("Error status:", error.response.status);
-                console.error("Response data:", error.response.data);
-              } else if (error.request) {
-                // The request was made but no response was received
-                console.error("No response received");
-                console.error("Request details:", error.request);
-                console.log("URL of the request:", error.request.responseURL);
-              } else {
-                // Something happened in setting up the request that triggered an Error
-                console.error("Error message:", error.message);
-              }
-              // Handle errors here
-            }
+            const res = username
+            ? await axios.get("/posts/profile/" + username)
+            : await axios.get("posts/timeline/65a524b7f1341528a745b99f");
+            setPosts(res.data);
           };
         
           fetchData();
