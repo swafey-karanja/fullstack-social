@@ -19,12 +19,22 @@ export default function Share() {
             desc : desc.current.value
         }
 
-        try {
+        if (file) {
+            const data = new FormData();
+            const fileName = Date.now() + file.name;
+            data.append("name", fileName);
+            data.append("file", file);
+            newPost.img = fileName;
+            console.log(newPost);
+            try {
+              await axios.post("/upload", data);
+            } catch (err) {}
+          }
+          try {
             await axios.post("/posts", newPost);
-        } catch (error) {
-            
-        }
-    }
+            window.location.reload();
+          } catch (err) {}
+        };
 
   return (
     <div className="share">
@@ -73,4 +83,4 @@ export default function Share() {
         </div>
     </div>
   )
-}
+};
