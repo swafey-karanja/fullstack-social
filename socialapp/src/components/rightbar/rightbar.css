@@ -90,3 +90,18 @@
     flex-direction: column;
 }
 
+.followButton{
+    margin-top: 35px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: green;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
